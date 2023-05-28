@@ -23,4 +23,5 @@ mongoose_1.default.connect(host).then(() => console.log('DB connection successfu
 // app.listen(5000, () => {
 //   console.log(`[server]: Server is running at http://localhost:${port}`);
 // });
+exports.default = app;
 //# sourceMappingURL=index.js.map

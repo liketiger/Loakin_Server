@@ -27,3 +27,5 @@ mongoose.connect(host).then(() => console.log('DB connection successful'));
 // app.listen(5000, () => {
 //   console.log(`[server]: Server is running at http://localhost:${port}`);
 // });
+
+export default app;
