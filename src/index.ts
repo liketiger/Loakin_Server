@@ -5,14 +5,12 @@ import './env';
 import { getSchedules, addSchedule, updateRaid, deleteSchedule, addRaid, addCrew, deleteCrew } from './controllers';
 
 const app: Express = express();
-// const port = process.env.DB_PORT;
+const port = process.env.PORT || 8080;
 const pwd: string = encodeURIComponent(process.env.DB_PASS as string);
 const host: string = process.env.DB_HOST!.replace('<password>', pwd) as string;
 
 app.use(express.json());
 app.use(cors());
-
-// app.route('/').get(getSchedules);
 
 app.route('/schedule').get(getSchedules).post(addSchedule);
 
@@ -24,8 +22,8 @@ app.route('/schedule/:id/:raidId/:crewId').delete(deleteCrew);
 
 mongoose.connect(host).then(() => console.log('DB connection successful'));
 
-// app.listen(5000, () => {
-//   console.log(`[server]: Server is running at http://localhost:${port}`);
-// });
+app.listen(5000, () => {
+  console.log(`[server]: Server is running at http://localhost:${port}`);
+});
 
 export default app;
