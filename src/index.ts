@@ -20,7 +20,9 @@ app.route('/schedule/:id/:raidId').delete(deleteSchedule).patch(updateRaid).post
 
 app.route('/schedule/:id/:raidId/:crewId').delete(deleteCrew);
 
-mongoose.connect(host).then(() => console.log('DB connection successful'));
+mongoose.connect(host, {
+  serverSelectionTimeoutMS: 30000, // 30 seconds timeout
+}).then(() => console.log('DB connection successful'));
 
 app.listen(5000, () => {
   console.log(`[server]: Server is running at http://localhost:${port}`);
