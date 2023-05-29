@@ -22,7 +22,7 @@ app.route('/schedule/:id/:raidId/:crewId').delete(deleteCrew);
 
 mongoose
   .connect(host, {
-    serverSelectionTimeoutMS: 30000 // 30 seconds timeout
+    serverSelectionTimeoutMS: 3000 // 30 seconds timeout
   })
   .then(() => console.log('DB connection successful'));
 

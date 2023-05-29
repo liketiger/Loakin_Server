@@ -20,7 +20,7 @@ app.route('/schedule/:id/:raidId').delete(controllers_1.deleteSchedule).patch(co
 app.route('/schedule/:id/:raidId/:crewId').delete(controllers_1.deleteCrew);
 mongoose_1.default
     .connect(host, {
-    serverSelectionTimeoutMS: 30000 // 30 seconds timeout
+    serverSelectionTimeoutMS: 3000 // 30 seconds timeout
 })
     .then(() => console.log('DB connection successful'));
 app.listen(port, () => {
