@@ -11,6 +11,7 @@ src/api-list.ts
 
 # production
 /build
+/functions
 
 # misc
 .DS_Store
