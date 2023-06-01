@@ -12,13 +12,20 @@ const host: string = process.env.DB_HOST!.replace('<password>', pwd) as string;
 app.use(express.json());
 app.use(cors());
 
-app.route('/schedule').get(getSchedules).post(addSchedule);
+app.route('/schedule')
+  .get(getSchedules)
+  .post(addSchedule);
 
-app.route('/schedule/:id').post(addRaid);
+app.route('/schedule/:id')
+  .post(addRaid);
 
-app.route('/schedule/:id/:raidId').delete(deleteSchedule).patch(updateRaid).post(addCrew);
+app.route('/schedule/:id/:raidId')
+  .delete(deleteSchedule)
+  .patch(updateRaid)
+  .post(addCrew);
 
-app.route('/schedule/:id/:raidId/:crewId').delete(deleteCrew);
+app.route('/schedule/:id/:raidId/:crewId')
+  .delete(deleteCrew);
 
 mongoose
   .connect(host, {
